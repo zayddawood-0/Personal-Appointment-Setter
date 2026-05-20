@@ -391,7 +391,7 @@ are excluded from this repository for security purposes.
 
 # Author
 
-## Zayd Dawood
+## M. Zayd Dawood
 
 - AI & Automation Enthusiast
 - Cybersecurity Enthusiast
