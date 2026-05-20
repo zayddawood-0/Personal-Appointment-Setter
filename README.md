@@ -222,41 +222,6 @@ https://www.salesforce.com/
 
 ---
 
-# Project Screenshots
-
-## ElevenLabs Dashboard
-![ElevenLabs Dashboard](screenshots/elevenlabs-dashboard.png)
-
----
-
-## Workflow Structure
-![Workflow](screenshots/workflow.png)
-
----
-
-## AI Agent Tools
-![Tools Page](screenshots/tools-page.png)
-
----
-
-## Salesforce Integration
-![Salesforce Integration](screenshots/salesforce-integration.png)
-
----
-
-## Cal.com Integration
-![Cal.com Integration](screenshots/calcom-integration.png)
-
----
-
-# Demo Video
-
-Instagram Reel Demo:
-
-https://www.instagram.com/reel/DYhp6pCIWUi/
-
----
-
 # Repository Structure
 
 ```txt
