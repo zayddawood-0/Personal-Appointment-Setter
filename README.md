@@ -44,7 +44,7 @@ The complete workflow was created using modern no-code AI automation tools witho
 
 ---
 
-# Project Architecture
+# Workflow Architecture
 
 ```txt
 User Voice Input
@@ -53,190 +53,400 @@ ElevenLabs AI Voice Agent
         ↓
 Conversational Processing
         ↓
-Appointment Scheduling Logic
+Lead Qualification
         ↓
-Cal.com API Integration
+ ┌───────────────────────────────┐
+ │ Qualified Prospect            │
+ │               OR              │
+ │ Not Ready Yet                 │
+ └───────────────────────────────┘
+        ↓                    ↓
+Check Availability      Nurture Workflow
+        ↓                    ↓
+Book Meeting         Collect Follow-up Info
+        ↓                    ↓
+Wrap Up                  End
         ↓
-Google Calendar Sync
-        ↓
-Salesforce CRM Storage
-How the Assistant Works
-1. Voice Interaction
+End
+```
 
-The user communicates with the AI assistant using natural voice conversation.
+---
 
-2. AI Conversation Processing
+# Workflow Explanation
 
-The ElevenLabs AI agent processes user requests and responds using realistic AI-generated voice.
+## 1. Greeting Stage
 
-3. Appointment Handling
+The AI assistant starts the conversation with a warm and professional greeting.
 
-The assistant checks available meeting slots using Cal.com scheduling tools.
+### Purpose
+- Welcome the prospect
+- Build conversational comfort
+- Introduce the assistant naturally
 
-4. Booking Confirmation
+### Example
+```txt
+Hello! Thank you for reaching out.
+I'd be happy to help you schedule an appointment today.
+```
 
-After selecting an available slot, the assistant books the appointment automatically.
+---
 
-5. Calendar Synchronization
+## 2. Interest Qualification
 
-The scheduled meeting is synced directly with Google Calendar.
+The assistant identifies:
+- User intent
+- Use case
+- Timeline
+- Interest level
 
-6. CRM Data Management
+### AI Actions
+- Understand customer requirements
+- Qualify the lead
+- Determine readiness for booking
 
-Customer information and booking details are stored inside Salesforce CRM.
+---
 
-Integrations Used
-ElevenLabs
+## 3. Decision Branching
 
+The workflow splits into two paths:
+
+### Qualified Prospect
+If the prospect is ready:
+```txt
+→ Check Availability
+```
+
+### Not Ready Yet
+If the prospect is interested but hesitant:
+```txt
+→ Nurture Workflow
+```
+
+---
+
+## 4. Check Availability
+
+The assistant checks available slots using Cal.com integration.
+
+### Integrations Used
+- Cal.com API
+- Google Calendar Sync
+
+### AI Actions
+- Fetch available time slots
+- Offer scheduling options
+- Suggest meeting times
+
+---
+
+## 5. Book Meeting
+
+After the user selects a slot, the assistant:
+- Confirms appointment details
+- Creates booking
+- Stores meeting information
+
+### Systems Involved
+- Cal.com
+- Google Calendar
+- Salesforce CRM
+
+---
+
+## 6. Wrap Up
+
+The AI assistant concludes the conversation professionally.
+
+### AI Actions
+- Confirm booking
+- Thank the user
+- End conversation naturally
+
+---
+
+## 7. Nurture Workflow
+
+For prospects not ready to book immediately.
+
+### AI Actions
+- Maintain engagement
+- Offer future follow-up
+- Request contact information
+- Collect email preferences
+
+---
+
+# Integrations Used
+
+## ElevenLabs
 Used for:
-
-AI voice generation
-Conversational AI
-Real-time speech interaction
-Voice assistant management
-
-Official Website:
-https://elevenlabs.io/
-
-Cal.com
-
-Used for:
-
-Appointment scheduling
-Availability checking
-Booking automation
-
-Official Website:
-https://cal.com/
-
-Google Calendar
-
-Used for:
-
-Event synchronization
-Appointment management
-Calendar booking
-
-Official Website:
-https://calendar.google.com/
-
-Salesforce CRM
-
-Used for:
-
-Customer data storage
-Lead management
-CRM automation
-
-Official Website:
-https://www.salesforce.com/
-
-Setup Guide
-Step 1 — Create ElevenLabs Account
-
-Create an account on ElevenLabs and create a conversational AI agent.
+- AI voice generation
+- Real-time conversations
+- Conversational AI
 
 Website:
 https://elevenlabs.io/
 
-Step 2 — Configure AI Agent
+---
+
+## Cal.com
+Used for:
+- Appointment scheduling
+- Availability checking
+- Meeting automation
+
+Website:
+https://cal.com/
+
+---
+
+## Google Calendar
+Used for:
+- Calendar synchronization
+- Event management
+- Appointment tracking
+
+Website:
+https://calendar.google.com/
+
+---
+
+## Salesforce CRM
+Used for:
+- Customer management
+- Lead storage
+- CRM automation
+
+Website:
+https://www.salesforce.com/
+
+---
+
+# Project Screenshots
+
+## ElevenLabs Dashboard
+![ElevenLabs Dashboard](screenshots/elevenlabs-dashboard.png)
+
+---
+
+## Workflow Structure
+![Workflow](screenshots/workflow.png)
+
+---
+
+## AI Agent Tools
+![Tools Page](screenshots/tools-page.png)
+
+---
+
+## Salesforce Integration
+![Salesforce Integration](screenshots/salesforce-integration.png)
+
+---
+
+## Cal.com Integration
+![Cal.com Integration](screenshots/calcom-integration.png)
+
+---
+
+# Demo Video
+
+Instagram Reel Demo:
+
+https://www.instagram.com/reel/DYhp6pCIWUi/
+
+---
+
+# Repository Structure
+
+```txt
+AI-Appointment-Setter-Agent/
+│
+├── README.md
+├── LICENSE
+├── .gitignore
+│
+├── agent-prompt.md
+├── workflow-explanation.md
+├── integrations.md
+├── setup-guide.md
+├── architecture.md
+│
+├── screenshots/
+│   ├── elevenlabs-dashboard.png
+│   ├── workflow.png
+│   ├── tools-page.png
+│   ├── salesforce-integration.png
+│   └── calcom-integration.png
+│
+└── demo/
+    └── demo-link.md
+```
+
+---
+
+# Setup Guide
+
+## Step 1 — Create ElevenLabs Account
+
+Create an account:
+https://elevenlabs.io/
+
+---
+
+## Step 2 — Configure AI Agent
 
 Configure:
+- System prompt
+- Voice model
+- Conversational behavior
+- Workflow logic
 
-System prompt
-Voice model
-Conversational behavior
-Tool integrations
-Step 3 — Connect Cal.com
+---
 
-Generate API keys from Cal.com and connect scheduling tools to the AI assistant.
+## Step 3 — Connect Cal.com
 
-Step 4 — Connect Google Calendar
+Generate API keys and connect:
+- Scheduling tools
+- Appointment APIs
+- Availability checking
 
-Sync Cal.com with Google Calendar for real-time appointment management.
+---
 
-Step 5 — Configure Salesforce CRM
+## Step 4 — Connect Google Calendar
 
-Create a Salesforce Developer account and configure:
+Sync Cal.com with Google Calendar to automate event creation.
 
-Consumer Key
-Consumer Secret
-OAuth Settings
-Instance Hostname
-Step 6 — Add Automation Tools
+---
 
-Connect workflow tools and APIs required for:
+## Step 5 — Configure Salesforce CRM
 
-Scheduling
-CRM updates
-Booking management
-API Integrations
-Cal.com API
+Create Salesforce Developer Account and configure:
+- Consumer Key
+- Consumer Secret
+- OAuth Settings
+- Instance Hostname
 
+---
+
+## Step 6 — Add Automation Tools
+
+Configure:
+- CRM actions
+- Scheduling actions
+- Workflow automations
+
+---
+
+# API Integrations
+
+## Cal.com API
 Used for:
+- Fetching available slots
+- Creating appointments
+- Scheduling meetings
 
-Fetching available slots
-Creating appointments
-Managing schedules
-Salesforce API
+---
 
+## Salesforce API
 Used for:
+- Creating leads
+- Managing customer information
+- CRM operations
 
-CRM operations
-Lead creation
-Customer management
-Google Calendar Sync
+---
 
+## Google Calendar Integration
 Used for:
+- Event synchronization
+- Calendar management
+- Meeting automation
 
-Event synchronization
-Automatic meeting creation
-Use Cases
+---
 
-This AI voice assistant can be used for:
+# Business Use Cases
 
-AI Receptionist
-Appointment Scheduling
-Business Automation
-Customer Support
-Clinic Appointment Systems
-Sales Call Handling
-CRM Automation
-Booking Assistants
-AI Front Desk Systems
-Skills Demonstrated
+This AI assistant can be used for:
+
+- AI Receptionists
+- Appointment Scheduling
+- Clinic Booking Systems
+- Sales Automation
+- Customer Support
+- CRM Automation
+- AI Front Desk Systems
+- Consultation Booking
+- Service-Based Businesses
+
+---
+
+# Skills Demonstrated
 
 This project demonstrates practical implementation of:
 
-Conversational AI
-Voice AI Systems
-Prompt Engineering
-API Integration
-Workflow Automation
-CRM Integration
-No-Code AI Development
-AI Scheduling Systems
-AI Business Automation
-Future Improvements
+- Conversational AI
+- Voice AI Systems
+- Prompt Engineering
+- Workflow Automation
+- API Integration
+- CRM Automation
+- No-Code AI Development
+- AI Scheduling Systems
+- Business Automation
 
-Planned upgrades for future versions:
+---
 
-WhatsApp Calling Integration
-Multi-language Support
-Voice Cloning
-RAG-based Memory System
-Analytics Dashboard
-AI Lead Qualification
-Custom Web Dashboard
-Email Automation
-SMS Notifications
-Real-time Admin Panel
-Security Note
+# Future Improvements
+
+Planned future upgrades:
+
+- WhatsApp Integration
+- Email Automation
+- SMS Notifications
+- Multi-language Support
+- Voice Cloning
+- Analytics Dashboard
+- AI Memory System
+- Admin Dashboard
+- Lead Scoring System
+- RAG-Based Knowledge Base
+
+---
+
+# Security Note
 
 Sensitive credentials such as:
-
-API keys
-OAuth tokens
-Consumer secrets
+- API keys
+- OAuth tokens
+- Consumer secrets
 
 are excluded from this repository for security purposes.
+
+---
+
+# Author
+
+## Zayd Dawood
+
+- AI & Automation Enthusiast
+- Cybersecurity Enthusiast
+- Voice AI Developer
+
+---
+
+# License
+
+This project is licensed under the MIT License.
+
+---
+
+# Connect With Me
+
+## GitHub
+https://github.com/
+
+## LinkedIn
+https://linkedin.com/
+
+## Instagram
+https://instagram.com/
