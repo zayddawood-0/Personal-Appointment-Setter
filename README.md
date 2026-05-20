@@ -439,14 +439,3 @@ are excluded from this repository for security purposes.
 This project is licensed under the MIT License.
 
 ---
-
-# Connect With Me
-
-## GitHub
-https://github.com/
-
-## LinkedIn
-https://linkedin.com/
-
-## Instagram
-https://instagram.com/
